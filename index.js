@@ -6,6 +6,8 @@ let loses = 0;
 let roundsPlayed = 0;
 let abort;
 
+console.clear();
+
 console.log("Let's play a little Rock-Paper-Scissors game.");
 let rounds = readlineSync.questionInt("How many rounds do u want to play? ");
 
@@ -30,6 +32,7 @@ while (roundsPlayed < rounds) {
 
     if (rps[myInput] === input) {
       console.log(`Draw.`);
+      console.log(`\n------------------------------------`);
       roundsPlayed++;
       draws++;
     } else if (
@@ -37,11 +40,13 @@ while (roundsPlayed < rounds) {
       (rps[myInput] === "paper" && input === "rock") ||
       (rps[myInput] === "scissor" && input === "paper")
     ) {
-      console.log(`You won this round! Congratulations :) `);
+      console.log(`You won this round! Congratulations :)`);
+      console.log(`\n------------------------------------`);
       roundsPlayed++;
       wins++;
     } else {
       console.log(`You lost this round :(`);
+      console.log(`\n------------------------------------`);
       roundsPlayed++;
       loses++;
     }
